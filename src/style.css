@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "roboto-slab";
+    src: url("./assets/fonts/roboto-slab-variable.ttf");
+}
+
+* {
+    font-family: 'roboto-slab';
+}
+
+body {
+    background-color: #454545;
+}
