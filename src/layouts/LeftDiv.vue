@@ -1,47 +1,9 @@
-<template>
-  <div>
-    <div class="space-y-8">
-      <div class="flex flex-row place-content-between">
-        <CorneredContainer></CorneredContainer>
-        <CorneredContainer class="rotate-90"></CorneredContainer>
-      </div>
-
-      <div class="font-normal px-8 space-y-4">
-        <h1 class="text-3xl text-white">Hey there!</h1>
-        <p class="text-2xl text-[#CBCBCB] space-y-4">
-          <span class="inline-block">My name is <span class="text-white font-bold">Thiago Olivier</span>.</span><br>
-          <span class="inline-block">I'm a <span class="text-[#BE8BFF]">Web Developer</span> and <span
-              class="text-[#BE8BFF]">UX Designer</span>.</span><br>
-          <span class="inline-block">I create user-centered products, prioritizing <span
-              class="text-white font-bold">accessibility</span> and <span class="text-white font-bold">user
-              experience</span>.</span>
-        </p>
-      </div>
-
-      <div class="flex flex-row place-content-between rotate-180">
-        <CorneredContainer></CorneredContainer>
-        <CorneredContainer class="rotate-90"></CorneredContainer>
-      </div>
-    </div>
-    <Container v-if="width >= 1024">
-      <ul id="desktop-nav" class="w-max">
-        <template v-for="(item, index) in desktopNavItems" :key="index">
-          <li :id="item.htmlId">
-            <DesktopNavItem :href="item.href">
-              {{ item.innerText }}
-            </DesktopNavItem>
-          </li>
-        </template>
-      </ul>
-    </Container>
-  </div>
-</template>
-
 <script setup>
+import { computed, onMounted, onUnmounted, ref } from "vue";
+
 import CorneredContainer from '../components/CorneredContainer.vue';
 import Container from '../components/Container.vue';
 import DesktopNavItem from '../components/DesktopNavItem.vue';
-import { computed, onMounted, onUnmounted, ref } from "vue"
 
 const useBreakpoints = () => {
   let windowWidth = ref(window.innerWidth)
@@ -50,15 +12,9 @@ const useBreakpoints = () => {
   onMounted(() => window.addEventListener('resize', onWidthChange))
   onUnmounted(() => window.removeEventListener('resize', onWidthChange))
 
-  const type = computed(() => {
-    if (windowWidth.value < 550) return 'xs'
-    if (windowWidth.value >= 550 && windowWidth.value < 1200) return 'md'
-    else return 'lg' // Fires when windowWidth.value >= 1200
-  })
-
   const width = computed(() => windowWidth.value)
 
-  return { width, type }
+  return { width }
 }
 
 const { width } = useBreakpoints()
@@ -86,19 +42,22 @@ const desktopNavItems = [
   },
 ]
 
-onMounted(() => {
+function handleRightDivScroll() {
   const parentDiv = document.getElementById('right-div');
   const childrenSections = parentDiv.querySelectorAll('section');
-  const navItems = document.getElementById('desktop-nav').querySelectorAll('li');
+  let navItems = '';
 
-  navItems[0].querySelector('a').classList.add('active');
+  if (document.getElementById('desktop-nav')) {
+    navItems = document.getElementById('desktop-nav').querySelectorAll('li');
+    navItems[0].querySelector('a').classList.add('active');
+  }
 
   const parentDivTop = parentDiv.getBoundingClientRect().top;
 
   let scrolling = false;
 
   parentDiv.addEventListener('scroll', () => {
-    if (!scrolling) {
+    if (!scrolling && navItems.length > 0) {
       scrolling = true;
 
       setTimeout(() => {
@@ -115,8 +74,55 @@ onMounted(() => {
         });
 
         scrolling = false;
-      }, 500);
+      }, 400);
     }
+  });
+}
+
+onMounted(() => {
+  handleRightDivScroll();
+
+  window.addEventListener('resize', () => {
+    handleRightDivScroll();
   });
 })
 </script>
+
+<template>
+  <div>
+    <div class="space-y-8">
+      <div class="flex flex-row place-content-between">
+        <CorneredContainer></CorneredContainer>
+        <CorneredContainer class="rotate-90"></CorneredContainer>
+      </div>
+
+      <div class="font-normal px-8 space-y-4">
+        <h1 class="text-3xl text-white">Hey there!</h1>
+        <p class="text-2xl text-[#CBCBCB] space-y-4">
+          <span class="inline-block">My name is <span class="text-white font-bold">Thiago Olivier</span>.</span><br>
+          <span class="inline-block">I'm a <span class="text-[#BE8BFF]">Web Developer</span> and <span
+              class="text-[#BE8BFF]">UX Designer</span>.</span><br>
+          <span class="inline-block">I create user-centered products, prioritizing <span
+              class="text-white font-bold">accessibility</span> and <span class="text-white font-bold">user
+              experience</span>.</span>
+        </p>
+      </div>
+
+      <div class="flex flex-row place-content-between rotate-180">
+        <CorneredContainer></CorneredContainer>
+        <CorneredContainer class="rotate-90"></CorneredContainer>
+      </div>
+    </div>
+    <nav v-if="width >= 1024" class="mt-4">
+      <ul id="desktop-nav" class="w-max">
+        <template v-for="(item, index) in desktopNavItems" :key="index">
+          <li :id="item.htmlId">
+            <DesktopNavItem :href="item.href">
+              {{ item.innerText }}
+            </DesktopNavItem>
+          </li>
+        </template>
+      </ul>
+    </nav>
+  </div>
+</template>

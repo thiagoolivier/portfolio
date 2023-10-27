@@ -13,4 +13,7 @@
 
 body {
     background-color: #454545;
+    max-height: 100vh;
+    padding: 0;
+    margin: 0;
 }
