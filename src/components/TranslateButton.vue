@@ -71,7 +71,7 @@ onClickOutside(target, () => {
 
 <style>
 .lang-card {
-  @apply absolute -top-10 left-10 inline-block rounded p-2 bg-[#3A3A3A]
+  @apply absolute -top-5 left-10 inline-block rounded p-2 bg-[#3A3A3A]
 }
 
 .lang-enter-active,
