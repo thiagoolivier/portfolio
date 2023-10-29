@@ -17,3 +17,27 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.svg-icon {
+  @apply inline transition ease-in delay-[50ms] fill-[#8C8A8A] group-hover:fill-white
+}
+
+.normal-text {
+  @apply text-[#CBCBCB] space-y-4
+}
+
+.content-title {
+  @apply font-bold text-2xl text-white
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
