@@ -9,7 +9,7 @@
     </div>
     <footer class="grid lg:grid-cols-1 lg:max-w-6xl lg:mx-auto max-lg:mx-2">
       <p class="py-4 text-center">
-        <small class="text-xs normal-text align-bottom">Made with Vue.js and Love </small>
+        <small class="text-xs normal-text align-bottom">Made with Vue.js, Tailwind and Love </small>
         <img class="inline w-5" src="/images/heart-tank.gif" alt="Megaman-x heart tank GIF.">
       </p>
     </footer>

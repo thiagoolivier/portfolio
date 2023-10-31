@@ -12,6 +12,8 @@
 
     <Container id="projects">
       <h2 class="content-title">Projects</h2>
+      <ProjectCard>
+      </ProjectCard>
     </Container>
 
     <Container id="skills" class="bg-[#424242]">
@@ -79,4 +81,5 @@
 import ContactOption from '../components/ContactOption.vue';
 import Container from "../components/Container.vue";
 import Skill from "../components/Skill.vue";
+import ProjectCard from "../components/ProjectCard.vue";
 </script>
