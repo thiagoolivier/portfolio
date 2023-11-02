@@ -41,7 +41,7 @@ const copyText = () => {
   isClicked.value = true;
   setTimeout(() => {
     isClicked.value = false;
-  }, 2000)
+  }, 1500)
 }
 </script>
 

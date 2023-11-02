@@ -1,8 +1,46 @@
+<template>
+  <div>
+    <div class="space-y-8">
+      <div class="flex flex-row place-content-between">
+        <CorneredContainer></CorneredContainer>
+        <CorneredContainer class="rotate-90"></CorneredContainer>
+      </div>
+
+      <div class="font-normal px-8 space-y-4">
+        <h1 class="text-3xl text-white">Hey there!</h1>
+        <p class="text-2xl text-[#CBCBCB] space-y-4">
+          <span class="inline-block">My name is <span class="text-white font-bold">Thiago Olivier</span>.</span><br>
+          <span class="inline-block">I'm a <span class="text-[#BE8BFF]">Web Developer</span> and <span
+              class="text-[#BE8BFF]">UX Designer</span>.</span><br>
+          <span class="inline-block">I create user-centered products, prioritizing <span
+              class="text-white font-bold">accessibility</span> and <span class="text-white font-bold">user
+              experience</span>.</span>
+        </p>
+      </div>
+
+      <div class="flex flex-row place-content-between rotate-180">
+        <CorneredContainer></CorneredContainer>
+        <CorneredContainer class="rotate-90"></CorneredContainer>
+      </div>
+    </div>
+    <nav v-if="width >= 1024" class="mt-4">
+      <ul id="desktop-nav" class="w-max">
+        <template v-for="(item, index) in desktopNavItems" :key="index">
+          <li :id="item.htmlId">
+            <DesktopNavItem :href="item.href">
+              {{ item.innerText }}
+            </DesktopNavItem>
+          </li>
+        </template>
+      </ul>
+    </nav>
+  </div>
+</template>
+
 <script setup>
 import { computed, onMounted, onUnmounted, ref } from "vue";
 
 import CorneredContainer from '../components/CorneredContainer.vue';
-import Container from '../components/Container.vue';
 import DesktopNavItem from '../components/DesktopNavItem.vue';
 
 const useBreakpoints = () => {
@@ -74,7 +112,7 @@ function handleRightDivScroll() {
         });
 
         scrolling = false;
-      }, 400);
+      }, 250);
     }
   });
 }
@@ -87,42 +125,3 @@ onMounted(() => {
   });
 })
 </script>
-
-<template>
-  <div>
-    <div class="space-y-8">
-      <div class="flex flex-row place-content-between">
-        <CorneredContainer></CorneredContainer>
-        <CorneredContainer class="rotate-90"></CorneredContainer>
-      </div>
-
-      <div class="font-normal px-8 space-y-4">
-        <h1 class="text-3xl text-white">Hey there!</h1>
-        <p class="text-2xl text-[#CBCBCB] space-y-4">
-          <span class="inline-block">My name is <span class="text-white font-bold">Thiago Olivier</span>.</span><br>
-          <span class="inline-block">I'm a <span class="text-[#BE8BFF]">Web Developer</span> and <span
-              class="text-[#BE8BFF]">UX Designer</span>.</span><br>
-          <span class="inline-block">I create user-centered products, prioritizing <span
-              class="text-white font-bold">accessibility</span> and <span class="text-white font-bold">user
-              experience</span>.</span>
-        </p>
-      </div>
-
-      <div class="flex flex-row place-content-between rotate-180">
-        <CorneredContainer></CorneredContainer>
-        <CorneredContainer class="rotate-90"></CorneredContainer>
-      </div>
-    </div>
-    <nav v-if="width >= 1024" class="mt-4">
-      <ul id="desktop-nav" class="w-max">
-        <template v-for="(item, index) in desktopNavItems" :key="index">
-          <li :id="item.htmlId">
-            <DesktopNavItem :href="item.href">
-              {{ item.innerText }}
-            </DesktopNavItem>
-          </li>
-        </template>
-      </ul>
-    </nav>
-  </div>
-</template>
