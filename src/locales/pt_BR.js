@@ -51,7 +51,7 @@ export const pt_BR = {
       title: "Ir para o perfil de Thiago no Linkedin.",
     },
     email: {
-      title: "Enviar e-mail para dev.thiagoolivier@gmail.com.",
+      title: "Enviar e-mail.",
     },
   },
   footer: {

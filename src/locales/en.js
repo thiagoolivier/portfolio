@@ -51,7 +51,7 @@ export const en = {
       title: "Go to Thiago's LinkedIn profile.",
     },
     email: {
-      title: "Send e-mail to dev.thiagoolivier@gmail.com.",
+      title: "Send e-mail.",
     },
   },
   footer: {
