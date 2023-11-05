@@ -1,7 +1,7 @@
 <template>
   <div class="md:max-h-[100vh] py-6 lg:px-2">
     <div class="grid lg:grid-cols-1 lg:max-w-6xl lg:mx-auto max-lg:mx-2">
-      <TranslateButton />
+      <TranslateButton :title="$t('translateButton.title')" />
     </div>
     <div class="grid gap-4 lg:grid-cols-2 lg:max-w-6xl lg:mx-auto mt-4">
       <LeftDiv class="max-lg:mx-2" />
@@ -9,8 +9,8 @@
     </div>
     <footer class="grid lg:grid-cols-1 lg:max-w-6xl lg:mx-auto max-lg:mx-2">
       <p class="py-4 text-center">
-        <small class="text-xs normal-text align-bottom">Made with Vue.js, Tailwind and Love </small>
-        <img class="inline w-5" src="/images/heart-tank.gif" alt="Megaman-x heart tank GIF.">
+        <small class="text-xs normal-text align-bottom">{{ $t('footer.madeWith') }}</small>
+        <img class="ml-1 inline w-5" src="/images/heart-tank.gif" alt="Megaman-x heart tank GIF.">
       </p>
     </footer>
   </div>

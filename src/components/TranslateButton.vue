@@ -1,36 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-import { onClickOutside } from '@vueuse/core';
-import LanguageOption from './LanguageOption.vue';
-
-const target = ref(null);
-const isVisible = ref(false);
-const languages = [
-  {
-    id: 1,
-    name: 'English',
-    url: 'images/us-flag-icon.png',
-    alt: 'United States flag'
-  },
-  {
-    id: 2,
-    name: 'Português',
-    url: 'images/br-flag-icon.png',
-    alt: 'Brazil flag'
-  }
-];
-
-function handleTranslateClick() {
-  if (isVisible.value == true) {
-    isVisible.value = false;
-  }
-}
-
-onClickOutside(target, () => {
-  handleTranslateClick();
-})
-</script>
-
 <template>
   <div class="relative">
     <span ref="target">
@@ -59,8 +26,7 @@ onClickOutside(target, () => {
         <div v-show="isVisible" class="lang-card">
           <ul class="space-y-1">
             <template v-for="language in languages" :key="language.id">
-              <LanguageOption @click="handleTranslateClick" :name="language.name" :url="language.url"
-                :alt="language.alt" />
+              <LanguageOption @click="handleTranslateClick(); setLocale(language.locale)" :name="language.name" :url="language.url" :alt="language.alt" />
             </template>
           </ul>
         </div>
@@ -68,6 +34,52 @@ onClickOutside(target, () => {
     </span>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import { onClickOutside } from '@vueuse/core';
+import LanguageOption from './LanguageOption.vue';
+
+const target = ref(null);
+const isVisible = ref(false);
+
+const languages = [
+  {
+    id: 1,
+    name: 'English',
+    url: 'images/us-flag-icon.png',
+    alt: 'United States flag',
+    locale: 'en'
+  },
+  {
+    id: 2,
+    name: 'Português',
+    url: 'images/br-flag-icon.png',
+    alt: 'Brazil flag',
+    locale: 'pt_BR'
+  }
+];
+
+function handleTranslateClick() {
+  if (isVisible.value == true) {
+    isVisible.value = false;
+  }
+}
+
+onClickOutside(target, () => {
+  handleTranslateClick();
+})
+</script>
+
+<script>
+export default {
+  methods: {
+    setLocale(locale) {
+      this.$i18n.locale = locale;
+    }
+  }
+}
+</script>
 
 <style>
 .lang-card {

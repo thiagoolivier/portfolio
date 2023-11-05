@@ -7,14 +7,15 @@
       </div>
 
       <div class="font-normal px-8 space-y-4">
-        <h1 class="text-3xl text-white">Hey there!</h1>
+        <h1 class="text-3xl text-white">{{ $t('salutation.hey_there') }}</h1>
         <p class="text-2xl text-[#CBCBCB] space-y-4">
-          <span class="inline-block">My name is <span class="text-white font-bold">Thiago Olivier</span>.</span><br>
-          <span class="inline-block">I'm a <span class="text-[#BE8BFF]">Web Developer</span> and <span
-              class="text-[#BE8BFF]">UX Designer</span>.</span><br>
-          <span class="inline-block">I create user-centered products, prioritizing <span
-              class="text-white font-bold">accessibility</span> and <span class="text-white font-bold">user
-              experience</span>.</span>
+          <span class="inline-block">{{ $t('salutation.my_name_is') }} <span class="text-white font-bold">Thiago
+              Olivier</span>.</span><br>
+          <span class="inline-block">{{ $t('salutation.im_a') }} <span class="text-[#BE8BFF]">Web Developer</span> {{
+            $t('salutation.and') }}<span class="text-[#BE8BFF]"> UX Designer</span>.</span><br>
+          <span class="inline-block">{{ $t('salutation.i_create') }} <span class="text-white font-bold">{{
+            $t('salutation.accessibility') }}</span> {{ $t('salutation.and') }} <span class="text-white font-bold">
+              {{ $t('salutation.ux') }}</span>.</span>
         </p>
       </div>
 
@@ -25,13 +26,26 @@
     </div>
     <nav v-if="width >= 1024" class="mt-4">
       <ul id="desktop-nav" class="w-max">
-        <template v-for="(item, index) in desktopNavItems" :key="index">
-          <li :id="item.htmlId">
-            <DesktopNavItem :href="item.href">
-              {{ item.innerText }}
-            </DesktopNavItem>
-          </li>
-        </template>
+        <li :id="'about-me-nav'">
+          <DesktopNavItem :href="'#about-me'">
+            {{ $t('desktop_nav_items.about_me') }}
+          </DesktopNavItem>
+        </li>
+        <li :id="'projects-nav'">
+          <DesktopNavItem :href="'#projects'">
+            {{ $t('desktop_nav_items.projects') }}
+          </DesktopNavItem>
+        </li>
+        <li :id="'skills-nav'">
+          <DesktopNavItem :href="'#skills'">
+            {{ $t('desktop_nav_items.skills') }}
+          </DesktopNavItem>
+        </li>
+        <li :id="'contact-nav'">
+          <DesktopNavItem :href="'#contact'">
+            {{ $t('desktop_nav_items.contact') }}
+          </DesktopNavItem>
+        </li>
       </ul>
     </nav>
   </div>
@@ -44,41 +58,18 @@ import CorneredContainer from '../components/CorneredContainer.vue';
 import DesktopNavItem from '../components/DesktopNavItem.vue';
 
 const useBreakpoints = () => {
-  let windowWidth = ref(window.innerWidth)
+  let windowWidth = ref(window.innerWidth);
 
-  const onWidthChange = () => windowWidth.value = window.innerWidth
-  onMounted(() => window.addEventListener('resize', onWidthChange))
-  onUnmounted(() => window.removeEventListener('resize', onWidthChange))
+  const onWidthChange = () => windowWidth.value = window.innerWidth;
+  onMounted(() => window.addEventListener('resize', onWidthChange));
+  onUnmounted(() => window.removeEventListener('resize', onWidthChange));
 
-  const width = computed(() => windowWidth.value)
+  const width = computed(() => windowWidth.value);
 
   return { width }
 }
 
-const { width } = useBreakpoints()
-
-const desktopNavItems = [
-  {
-    "htmlId": 'about-me-nav',
-    "href": '#about-me',
-    "innerText": "About me"
-  },
-  {
-    "htmlId": 'projects-nav',
-    "href": "#projects",
-    "innerText": "Projects"
-  },
-  {
-    "htmlId": 'skills-nav',
-    "href": "#skills",
-    "innerText": "Skills"
-  },
-  {
-    "htmlId": 'contact-nav',
-    "href": "#contact",
-    "innerText": "Contact"
-  },
-]
+const { width } = useBreakpoints();
 
 function handleRightDivScroll() {
   const parentDiv = document.getElementById('right-div');

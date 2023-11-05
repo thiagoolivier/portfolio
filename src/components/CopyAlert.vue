@@ -1,11 +1,10 @@
 <template>
   <div class="badge -right-7 -top-8 w-max py-1 px-1 text-xs font-bold shadow-md">
-    Text copied
+     {{ $t('components.copyAlert') }}
   </div>
 </template>
 
 <script setup>
-
 </script>
 
 <style scoped>

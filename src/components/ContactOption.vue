@@ -11,7 +11,7 @@
       <slot name="link-text"></slot>
     </span>
 
-    <button ref="copyBtn" @click="copyText" title="Copy content" id="copy-btn" class="inline-block">
+    <button ref="copyBtn" @click="copyText" :title="$t('components.contactOption.copyContentTitle')" id="copy-btn" class="inline-block">
       <svg class="svg-icon" id="copy-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M15.2728 4H6.54549C5.74549 4 5.09094 4.65455 5.09094 5.45455V15.6364H6.54549V5.45455H15.2728V4ZM17.4546 6.90909H9.45458C8.65458 6.90909 8.00003 7.56364 8.00003 8.36364V18.5455C8.00003 19.3455 8.65458 20 9.45458 20H17.4546C18.2546 20 18.9091 19.3455 18.9091 18.5455V8.36364C18.9091 7.56364 18.2546 6.90909 17.4546 6.90909ZM17.4546 18.5455H9.45458V8.36364H17.4546V18.5455Z" />

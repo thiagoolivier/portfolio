@@ -1,50 +1,49 @@
 <template>
   <div id="right-div" class="scroll-smooth">
     <Container id="about-me" class="bg-[#424242]">
-      <h2 class="content-title">About me</h2>
+      <h2 class="content-title">{{ $t('about.title') }}</h2>
       <div class="normal-text">
-        <p>Hello! My name is Thiago. Nice to have you here!</p>
-        <p>I'm a young web developer on the road to leave my mark in the world.</p>
-        <p>For some time i've been studying about computer science and UX Design. Recently i finished my Google UX Design
-          professional certification, but i know i must keep improving my knowledge.</p>
+        <p>{{ $t('about.p1') }}</p>
+        <p>{{ $t('about.p2') }}</p>
+        <p>{{ $t('about.p3') }}</p>
       </div>
     </Container>
 
     <Container id="projects">
-      <h2 class="content-title">Projects</h2>
+      <h2 class="content-title">{{ $t('projects.title') }}</h2>
       <div class="space-y-3">
       <ProjectCard v-for="project in projects" :key="project" :project="project" />
       </div>
     </Container>
 
     <Container id="skills" class="bg-[#424242]">
-      <h2 class="content-title">Skills</h2>
+      <h2 class="content-title">{{  $t('skills.title') }}</h2>
       <Skill :skillLevel="3">
-        <slot>Laravel</slot>
+        <slot>{{  $t('skills.skill1') }}</slot>
       </Skill>
       <Skill :skillLevel="2">
-        <slot>Vue.js</slot>
+        <slot>{{  $t('skills.skill2') }}</slot>
       </Skill>
       <Skill :skillLevel="3">
-        <slot>UX Design and Figma</slot>
+        <slot>{{  $t('skills.skill3') }}</slot>
       </Skill>
       <Skill :skillLevel="4">
-        <slot>Problem-Solving</slot>
+        <slot>{{  $t('skills.skill4') }}</slot>
       </Skill>
       <Skill :skillLevel="4">
-        <slot>Communication</slot>
+        <slot>{{  $t('skills.skill5') }}</slot>
       </Skill>
       <Skill :skillLevel="3">
-        <slot>Adaptability</slot>
+        <slot>{{  $t('skills.skill6') }}</slot>
       </Skill>
     </Container>
 
     <Container id="contact" class="flex flex-col items-center pt-32 md:pb-[18rem] max-sm:pb-[10rem] space-y-[6rem]">
-      <h2 class="content-title">Contact</h2>
-      <p class="normal-text text-center">Feel free to reach me through the following links</p>
+      <h2 class="content-title">{{ $t('contact.title') }}</h2>
+      <p class="normal-text text-center">{{ $t('contact.feelFree') }}</p>
 
       <div class="space-y-8">
-        <ContactOption :title="'Link to Github'" :url="'https://www.github.com/thiagoolivier'">
+        <ContactOption :title="$t('contact.github.title')" :url="'https://www.github.com/thiagoolivier'">
           <template #contact-icon>
             <svg class="svg-icon" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -57,7 +56,7 @@
           </template>
         </ContactOption>
 
-        <ContactOption :title="'Link to Linkedin'" :url="'https://www.linkedin.com/in/thiagoolivier/'">
+        <ContactOption :title="$t('contact.linkedin.title')" :url="'https://www.linkedin.com/in/thiagoolivier/'">
           <template #contact-icon>
             <svg class="svg-icon" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -70,7 +69,7 @@
           </template>
         </ContactOption>
 
-        <ContactOption :title="'Send e-mail to dev.thiagoolivier@gmail.com'" :url="'mailto:dev.thiagoolivier@gmail.com'">
+        <ContactOption :title="$t('contact.email.title')" :url="'mailto:dev.thiagoolivier@gmail.com'">
           <template #contact-icon>
             <svg class="svg-icon" width="28" height="32" viewBox="0 0 28 32" xmlns="http://www.w3.org/2000/svg">
               <path
