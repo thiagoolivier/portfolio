@@ -4,6 +4,9 @@ export const pt_BR = {
     contactOption: {
       copyContentTitle: "Copiar conteúdo",
     },
+    project: {
+      title: "Ver detalhes do projeto",
+    },
   },
   translateButton: {
     title: "Escolher idioma",
@@ -40,6 +43,8 @@ export const pt_BR = {
     skill4: "Solução de Problemas",
     skill5: "Comunicação",
     skill6: "Adaptabilidade",
+    resume: "Ver currículo completo",
+    resumePath: "pdf/resume_ptbr.pdf",
   },
   contact: {
     title: "Contato",

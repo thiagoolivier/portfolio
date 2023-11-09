@@ -26,7 +26,8 @@
         <div v-show="isVisible" class="lang-card">
           <ul class="space-y-1">
             <template v-for="language in languages" :key="language.id">
-              <LanguageOption @click="handleTranslateClick(); setLocale(language.locale)" :name="language.name" :url="language.url" :alt="language.alt" />
+              <LanguageOption @click="handleTranslateClick(); setLocale(language.locale)" :name="language.name"
+                :url="language.url" :alt="language.alt" />
             </template>
           </ul>
         </div>
@@ -36,10 +37,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref  } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 import LanguageOption from './LanguageOption.vue';
+import { useI18n } from "vue-i18n";
 
+const { locale } = useI18n();
 const target = ref(null);
 const isVisible = ref(false);
 
@@ -66,19 +69,13 @@ function handleTranslateClick() {
   }
 }
 
+function setLocale(input) {
+  locale.value = input;
+}
+
 onClickOutside(target, () => {
   handleTranslateClick();
 })
-</script>
-
-<script>
-export default {
-  methods: {
-    setLocale(locale) {
-      this.$i18n.locale = locale;
-    }
-  }
-}
 </script>
 
 <style>

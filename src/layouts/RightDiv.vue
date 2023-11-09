@@ -11,31 +11,40 @@
 
     <Container id="projects">
       <h2 class="content-title">{{ $t('projects.title') }}</h2>
-      <div class="space-y-3">
       <ProjectCard v-for="project in projects" :key="project" :project="project" />
-      </div>
     </Container>
 
     <Container id="skills" class="bg-[#424242]">
-      <h2 class="content-title">{{  $t('skills.title') }}</h2>
+      <h2 class="content-title">{{ $t('skills.title') }}</h2>
       <Skill :skillLevel="3">
-        <slot>{{  $t('skills.skill1') }}</slot>
+        <slot>{{ $t('skills.skill1') }}</slot>
       </Skill>
       <Skill :skillLevel="2">
-        <slot>{{  $t('skills.skill2') }}</slot>
+        <slot>{{ $t('skills.skill2') }}</slot>
       </Skill>
       <Skill :skillLevel="3">
-        <slot>{{  $t('skills.skill3') }}</slot>
+        <slot>{{ $t('skills.skill3') }}</slot>
       </Skill>
       <Skill :skillLevel="4">
-        <slot>{{  $t('skills.skill4') }}</slot>
+        <slot>{{ $t('skills.skill4') }}</slot>
       </Skill>
       <Skill :skillLevel="4">
-        <slot>{{  $t('skills.skill5') }}</slot>
+        <slot>{{ $t('skills.skill5') }}</slot>
       </Skill>
       <Skill :skillLevel="3">
-        <slot>{{  $t('skills.skill6') }}</slot>
+        <slot>{{ $t('skills.skill6') }}</slot>
       </Skill>
+      <div class="flex justify-center">
+        <button class="group flex py-4 space-x-2">
+          <a class="text-sm text-[#cbcbcb] group-hover:text-white font-bold transition ease-out delay-100"
+            :href="$t('skills.resumePath')" target="_blank">{{ $t('skills.resume') }}</a>
+          <svg class="fill-[#CBCBCB] group-hover:fill-white my-auto transition ease-out delay-100" width="14" height="14"
+            viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13 1.99992C13 1.44763 12.5522 0.999919 12 0.999919L2.99996 0.99992C2.44767 0.999919 1.99996 1.44763 1.99996 1.99992C1.99996 2.5522 2.44767 2.99992 2.99996 2.99992L11 2.99992L11 10.9999C11 11.5522 11.4477 11.9999 12 11.9999C12.5522 11.9999 13 11.5522 13 10.9999L13 1.99992ZM2.80757 12.6065L12.7071 2.70703L11.2929 1.29281L1.39336 11.1923L2.80757 12.6065Z" />
+          </svg>
+        </button>
+      </div>
     </Container>
 
     <Container id="contact" class="flex flex-col items-center pt-32 md:pb-[18rem] max-sm:pb-[10rem] space-y-[6rem]">
@@ -99,6 +108,7 @@ const projects = reactive([
     thumbnail: 'images/projects/portfolio_thumb.png',
     thumbnailAlt: 'Portfolio project thumbail image.',
     description: 'A showcase of skills, projects, biography and more.',
+    pdf: 'pdf/project_pdf.pdf',
     skillTags: [
       'Vue.js',
       'Tailwind CSS',

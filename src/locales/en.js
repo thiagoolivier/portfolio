@@ -4,9 +4,12 @@ export const en = {
     contactOption: {
       copyContentTitle: "Copy content",
     },
+    project: {
+      title: "See project details",
+    },
   },
   translateButton: {
-    title: 'Choose language'
+    title: "Choose language",
   },
   salutation: {
     hey_there: "Hey there!",
@@ -40,6 +43,8 @@ export const en = {
     skill4: "Problem-solving",
     skill5: "Communication",
     skill6: "Adaptability",
+    resume: "See full resume",
+    resumePath: "pdf/resume_en.pdf",
   },
   contact: {
     title: "Contact",
