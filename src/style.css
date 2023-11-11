@@ -3,35 +3,59 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "roboto-slab";
-    src: url("./assets/fonts/roboto-slab-variable.ttf");
+  font-family: "roboto-slab";
+  src: url("./assets/fonts/roboto-slab-variable.ttf");
 }
 
 * {
-    font-family: 'roboto-slab';
+  font-family: "roboto-slab";
 }
 
 body {
-    background-color: #454545;
-    max-height: 100vh;
-    padding: 0;
-    margin: 0;
+  background-color: #454545;
+  max-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .svg-icon {
-  @apply inline transition ease-in delay-[50ms] fill-[#8C8A8A] group-hover:fill-white
+  @apply inline transition ease-in delay-[50ms] fill-[#8C8A8A] group-hover:fill-white;
 }
 
 .normal-text {
-  @apply text-[#CBCBCB] space-y-4
+  @apply text-[#CBCBCB] space-y-4;
 }
 
 .content-title {
-  @apply font-bold text-2xl text-white
+  @apply font-bold text-2xl text-white;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+.custom-scrollbar::-webkit-scrollbar {
+  position: absolute;
+  width: 4px;  
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #8c8a8a;
+  border-radius: 6px; /* Bordas arredondadas */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; /* Track invisível */
+}
+
+/* Estilos para Firefox */
+.custom-scrollbar::-moz-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-moz-scrollbar-thumb {
+  background-color: #8c8a8a;
+  border-radius: 6px; /* Bordas arredondadas */
+}
+
+.custom-scrollbar::-moz-scrollbar-track {
+  background-color: transparent; /* Track invisível */
 }
 
 /* For IE, Edge and Firefox */

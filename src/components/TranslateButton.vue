@@ -39,8 +39,8 @@
 <script setup>
 import { ref  } from 'vue';
 import { onClickOutside } from '@vueuse/core';
-import LanguageOption from './LanguageOption.vue';
 import { useI18n } from "vue-i18n";
+import LanguageOption from './LanguageOption.vue';
 
 const { locale } = useI18n();
 const target = ref(null);

@@ -60,6 +60,6 @@ export const en = {
     },
   },
   footer: {
-    madeWith: "Made with Vue.js, Tailwind CSS and lots of love",
+    madeWith: "Made with Vue.js, Tailwind CSS and love",
   },
 };

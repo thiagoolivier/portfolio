@@ -60,6 +60,6 @@ export const pt_BR = {
     },
   },
   footer: {
-    madeWith: "Feito com Vue.js, Tailwind CSS e muito amor",
+    madeWith: "Feito com Vue.js, Tailwind CSS e amor",
   },
 };
