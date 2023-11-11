@@ -21,6 +21,3 @@ import LeftDiv from "./layouts/LeftDiv.vue";
 import RightDiv from "./layouts/RightDiv.vue";
 import TranslateButton from "./components/TranslateButton.vue";
 </script>
-
-<style scoped>
-</style>
