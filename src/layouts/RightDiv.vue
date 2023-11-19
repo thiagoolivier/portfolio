@@ -11,7 +11,15 @@
 
     <Container id="projects">
       <h2 class="content-title">{{ $t('projects.title') }}</h2>
-      <ProjectCard v-for="project in projects" :key="project" :project="project" />
+      <div class="space-y-2 max-sm:space-y-4">
+        <ProjectCard :title="$t('projects.portfolio.title')" :details="$t('projects.portfolio.details')"
+          :thumbnail="$t('projects.portfolio.thumbnail')" :thumbnailAlt="$t('projects.portfolio.thumbnailAlt')"
+          :pdf="$t('projects.portfolio.pdf')" :skillTags="projects.portfolio.skillTags" />
+
+        <ProjectCard :title="$t('projects.tfitness.title')" :details="$t('projects.tfitness.details')"
+          :thumbnail="$t('projects.tfitness.thumbnail')" :thumbnailAlt="$t('projects.tfitness.thumbnailAlt')"
+          :pdf="$t('projects.tfitness.pdf')" :skillTags="projects.tfitness.skillTags" />
+      </div>
     </Container>
 
     <Container id="skills" class="bg-[#424242]">
@@ -102,18 +110,19 @@ import Container from "../components/Container.vue";
 import Skill from "../components/Skill.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 
-const projects = reactive([
-  {
-    name: 'Portfolio V1',
-    thumbnail: 'images/projects/portfolio_thumb.png',
-    thumbnailAlt: 'Portfolio project thumbail image.',
-    description: 'A showcase of skills, projects, biography and more.',
-    pdf: 'pdf/project_pdf.pdf',
+const projects = reactive({
+  portfolio: {
     skillTags: [
       'Vue.js',
-      'Tailwind CSS',
+      'Tailwind CSS'
     ]
   },
-]);
+  tfitness: {
+    skillTags: [
+      'UX Design',
+      'Figma'
+    ]
+  },
+});
 
 </script>

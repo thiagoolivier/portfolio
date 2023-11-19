@@ -1,12 +1,12 @@
 <template>
   <button :title="$t('components.project.title')" id="project-card" class="project-card group">
-    <a :href="project.pdf" target="_blank">
+    <a :href="pdf" target="_blank">
       <div class="flex items-center max-sm:items-start space-x-3">
-        <img class="project-thumbnail" :src="project.thumbnail" :alt="project.thumbnailAlt">
+        <img class="project-thumbnail" :src="thumbnail" :alt="thumbnailAlt">
         <div class="project-card-header normal-text">
           <div class="flex justify-between align-middle">
             <h4 class="font-bold">
-              {{ project.name }}
+              {{ title }}
             </h4>
             <svg class="arrow-svg" width="18" height="18" viewBox="0 0 14 14" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -15,13 +15,13 @@
             </svg>
           </div>
           <p class="text-sm text-left max-sm:text-xs">
-            {{ project.description }}
+            {{ details }}
           </p>
         </div>
       </div>
     </a>
     <div class="flex justify-center space-x-2">
-      <SkillTag v-for="skillTag in project.skillTags" :key="skillTag">{{ skillTag }}</SkillTag>
+      <SkillTag v-for="skillTag in skillTags" :key="skillTag">{{ skillTag }}</SkillTag>
     </div>
   </button>
 </template>
@@ -30,14 +30,12 @@
 import SkillTag from './SkillTag.vue';
 
 const props = defineProps({
-  project: {
-    name: '',
-    thumbnail: '',
-    thumbnailAlt: '',
-    description: '',
-    pdf: '',
-    skillTags: [],
-  },
+  title: '',
+  details: '',
+  thumbnail: '',
+  thumbnailAlt: '',
+  pdf: '',
+  skillTags: {},
 });
 </script>
 

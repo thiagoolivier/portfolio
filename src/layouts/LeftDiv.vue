@@ -11,7 +11,7 @@
         <p class="text-2xl text-[#CBCBCB] space-y-4">
           <span class="inline-block">{{ $t('salutation.my_name_is') }} <span class="text-white font-bold">Thiago
               Olivier</span>.</span><br>
-          <span class="inline-block">{{ $t('salutation.im_a') }} <span class="text-[#BE8BFF]">Web Developer</span> {{
+          <span class="inline-block">{{ $t('salutation.im_a') }} <span class="text-[#BE8BFF]">{{ $t('salutation.webdev') }}</span> {{
             $t('salutation.and') }}<span class="text-[#BE8BFF]"> UX Designer</span>.</span><br>
           <span class="inline-block">{{ $t('salutation.i_create') }} <span class="text-white font-bold">{{
             $t('salutation.accessibility') }}</span> {{ $t('salutation.and') }} <span class="text-white font-bold">

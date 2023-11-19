@@ -15,6 +15,7 @@ export const pt_BR = {
     hey_there: "Olá!",
     my_name_is: "Meu nome é",
     im_a: "Eu sou um",
+    webdev: "Desenvolvedor Web",
     and: "e",
     i_create: "Eu crio soluções focadas no usuário, priorizando",
     accessibility: "acessibilidade",
@@ -29,11 +30,25 @@ export const pt_BR = {
   about: {
     title: "Sobre mim",
     p1: "Oi! Meu nome é Thiago. Bom ter você por aqui.",
-    p2: "Sou um desenvolvedor web ansioso para criar soluções práticas para os problemas complexos que temos por aí.",
+    p2: "Sou um desenvolvedor web e entusiasta de UX design ansioso para criar soluções práticas para os problemas complexos que temos por aí.",
     p3: "Pra mim, com o foco no usuário e planejamento, é possível encontrar soluções incríveis e inovadoras. :D",
   },
   projects: {
     title: "Projetos",
+    portfolio: {
+      title: "Portfolio",
+      details: "Uma demonstração de habilidades, projetos, biografia e mais.",
+      thumbnail: "projects/my_portfolio/thumbnail.png",
+      thumbnailAlt: "Imagem do projeto Portfolio.",
+      pdf: "projects/my_portfolio/ptbr/project.pdf",
+    },
+    tfitness: {
+      title: "TFitness",
+      details: "Uma solução para conectar profissionais fitness e pessoas.",
+      thumbnail: "projects/tfitness/ptbr/thumbnail.png",
+      thumbnailAlt: "Imagem do projeto TFitness.",
+      pdf: "projects/tfitness/ptbr/project.pdf",
+    },
   },
   skills: {
     title: "Habilidades",
@@ -44,7 +59,7 @@ export const pt_BR = {
     skill5: "Comunicação",
     skill6: "Adaptabilidade",
     resume: "Ver currículo completo",
-    resumePath: "pdf/resume_ptbr.pdf",
+    resumePath: "resume/ptbr.pdf",
   },
   contact: {
     title: "Contato",

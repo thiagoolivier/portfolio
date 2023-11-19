@@ -14,8 +14,8 @@ const languages = {
 const i18n = createI18n({
   seo: true,
   legacy: false,
-  locale: "pt_BR",
-  fallbackLocale: "en",
+  locale: "en",
+  fallbackLocale: "pt_BR",
   messages: languages,
 });
 
