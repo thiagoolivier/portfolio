@@ -12,6 +12,10 @@
     <Container id="projects">
       <h2 class="content-title">{{ $t('projects.title') }}</h2>
       <div class="space-y-2 max-sm:space-y-4">
+        <ProjectCard :title="$t('projects.myerp.title')" :details="$t('projects.myerp.details')"
+          :thumbnail="$t('projects.myerp.thumbnail')" :thumbnailAlt="$t('projects.myerp.thumbnailAlt')"
+          :pdf="$t('projects.myerp.pdf')" :skillTags="projects.myerp.skillTags" />
+
         <ProjectCard :title="$t('projects.portfolio.title')" :details="$t('projects.portfolio.details')"
           :thumbnail="$t('projects.portfolio.thumbnail')" :thumbnailAlt="$t('projects.portfolio.thumbnailAlt')"
           :pdf="$t('projects.portfolio.pdf')" :skillTags="projects.portfolio.skillTags" />
@@ -46,8 +50,8 @@
         <button class="group flex py-4 space-x-2">
           <a class="text-sm text-[#cbcbcb] group-hover:text-white font-bold transition ease-out delay-100"
             :href="$t('skills.resumePath')" target="_blank">{{ $t('skills.resume') }}</a>
-          <svg class="fill-[#CBCBCB] group-hover:fill-white my-auto transition ease-out delay-100" width="14" height="14"
-            viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="fill-[#CBCBCB] group-hover:fill-white my-auto transition ease-out delay-100" width="14"
+            height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13 1.99992C13 1.44763 12.5522 0.999919 12 0.999919L2.99996 0.99992C2.44767 0.999919 1.99996 1.44763 1.99996 1.99992C1.99996 2.5522 2.44767 2.99992 2.99996 2.99992L11 2.99992L11 10.9999C11 11.5522 11.4477 11.9999 12 11.9999C12.5522 11.9999 13 11.5522 13 10.9999L13 1.99992ZM2.80757 12.6065L12.7071 2.70703L11.2929 1.29281L1.39336 11.1923L2.80757 12.6065Z" />
           </svg>
@@ -114,6 +118,15 @@ const projects = reactive({
   portfolio: {
     skillTags: [
       'Vue.js',
+      'Tailwind CSS'
+    ]
+  },
+  myerp: {
+    skillTags: [
+      'Laravel',
+      'MySQL',
+      'Vue.js',
+      'TypeScript',
       'Tailwind CSS'
     ]
   },
