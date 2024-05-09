@@ -83,5 +83,6 @@ export const pt_BR = {
   },
   footer: {
     madeWith: 'Feito com Vue.js, Tailwind CSS e amor',
+    lastUpdated: 'Última atualização: 05/2024',
   },
 };

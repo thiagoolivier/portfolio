@@ -59,7 +59,7 @@
       </div>
     </Container>
 
-    <Container id="contact" class="flex flex-col items-center pt-32 md:pb-[18rem] max-sm:pb-[10rem] space-y-[6rem]">
+    <Container id="contact" class="flex flex-col items-center pt-32 md:pb-[18rem] max-sm:pb-[10rem] space-y-[4rem]">
       <h2 class="content-title">{{ $t('contact.title') }}</h2>
       <p class="normal-text text-center">{{ $t('contact.feelFree') }}</p>
 

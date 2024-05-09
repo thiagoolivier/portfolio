@@ -8,9 +8,12 @@
       <RightDiv class="rounded-lg lg:overflow-y-auto lg:h-[80vh] custom-scrollbar" />
     </div>
     <footer class="grid lg:grid-cols-1 lg:max-w-6xl lg:mx-auto max-lg:mx-2">
-      <p class="py-4 text-center">
+      <p class="pt-2 text-center">
         <small class="text-xs normal-text align-bottom">{{ $t('footer.madeWith') }}</small>
         <img class="ml-1 inline w-5" src="/images/heart-tank.gif" alt="Megaman-x heart tank GIF.">
+      </p>
+      <p class="text-center">
+        <small class="text-xs normal-text align-bottom">{{ $t('footer.lastUpdated') }}</small>
       </p>
     </footer>
   </div>
