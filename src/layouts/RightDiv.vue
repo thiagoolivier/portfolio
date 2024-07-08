@@ -1,17 +1,21 @@
 <template>
   <div id="right-div" class="scroll-smooth">
+    <!-- About Me -->
     <Container id="about-me" class="bg-[#424242]">
       <h2 class="content-title">{{ $t('about.title') }}</h2>
       <div class="normal-text">
         <p>{{ $t('about.p1') }}</p>
         <p>{{ $t('about.p2') }}</p>
         <p>{{ $t('about.p3') }}</p>
+        <p>{{ $t('about.p4') }}</p>
+        <p>{{ $t('about.p5') }}</p>
       </div>
     </Container>
 
+    <!-- Projects -->
     <Container id="projects">
       <h2 class="content-title">{{ $t('projects.title') }}</h2>
-      <div class="space-y-2 max-sm:space-y-4">
+      <div class="space-y-4 max-sm:space-y-4">
         <ProjectCard :title="$t('projects.myerp.title')" :details="$t('projects.myerp.details')"
           :thumbnail="$t('projects.myerp.thumbnail')" :thumbnailAlt="$t('projects.myerp.thumbnailAlt')"
           :pdf="$t('projects.myerp.pdf')" :skillTags="projects.myerp.skillTags" />
@@ -26,13 +30,23 @@
       </div>
     </Container>
 
+    <!-- Skills -->
     <Container id="skills" class="bg-[#424242]">
       <h2 class="content-title">{{ $t('skills.title') }}</h2>
-      <Skill :skillLevel="3">
+      <Skill :skillLevel="4">
         <slot>{{ $t('skills.skill1') }}</slot>
       </Skill>
       <Skill :skillLevel="2">
         <slot>{{ $t('skills.skill2') }}</slot>
+      </Skill>
+      <Skill :skillLevel="4">
+        <slot>{{ $t('skills.skill7') }}</slot>
+      </Skill>
+      <Skill :skillLevel="2">
+        <slot>{{ $t('skills.skill8') }}</slot>
+      </Skill>
+      <Skill :skillLevel="2">
+        <slot>{{ $t('skills.skill9') }}</slot>
       </Skill>
       <Skill :skillLevel="3">
         <slot>{{ $t('skills.skill3') }}</slot>
@@ -43,12 +57,12 @@
       <Skill :skillLevel="4">
         <slot>{{ $t('skills.skill5') }}</slot>
       </Skill>
-      <Skill :skillLevel="3">
+      <Skill :skillLevel="4">
         <slot>{{ $t('skills.skill6') }}</slot>
       </Skill>
       <div class="flex justify-center">
         <button class="group flex py-4 space-x-2">
-          <a class="text-sm text-[#cbcbcb] group-hover:text-white font-bold transition ease-out delay-100"
+          <a class="text-md text-[#cbcbcb] group-hover:text-white font-bold transition ease-out delay-100"
             :href="$t('skills.resumePath')" target="_blank">{{ $t('skills.resume') }}</a>
           <svg class="fill-[#CBCBCB] group-hover:fill-white my-auto transition ease-out delay-100" width="14"
             height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +73,8 @@
       </div>
     </Container>
 
-    <Container id="contact" class="flex flex-col items-center pt-32 md:pb-[18rem] max-sm:pb-[10rem] space-y-[4rem]">
+    <!-- Contact -->
+    <Container id="contact" class="flex flex-col items-center pt-[12rem] pb-[16rem] max-sm:pb-[20rem] space-y-[4rem]">
       <h2 class="content-title">{{ $t('contact.title') }}</h2>
       <p class="normal-text text-center">{{ $t('contact.feelFree') }}</p>
 

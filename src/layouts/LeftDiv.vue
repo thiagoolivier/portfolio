@@ -9,13 +9,23 @@
       <div class="font-normal px-8 space-y-4">
         <h1 class="text-3xl text-white">{{ $t('salutation.hey_there') }}</h1>
         <p class="text-2xl text-[#CBCBCB] space-y-4">
-          <span class="inline-block">{{ $t('salutation.my_name_is') }} <span class="text-white font-bold">Thiago
-              Olivier</span>.</span><br>
-          <span class="inline-block">{{ $t('salutation.im_a') }} <span class="text-[#BE8BFF]">{{ $t('salutation.webdev') }}</span> {{
-            $t('salutation.and') }}<span class="text-[#BE8BFF]"> UX Designer</span>.</span><br>
-          <span class="inline-block">{{ $t('salutation.i_create') }} <span class="text-white font-bold">{{
-            $t('salutation.accessibility') }}</span> {{ $t('salutation.and') }} <span class="text-white font-bold">
-              {{ $t('salutation.ux') }}</span>.</span>
+          <span class="inline-block">{{ $t('salutation.my_name_is') }}
+            <span class="text-white font-bold">Thiago Oliveira</span>.
+          </span>
+
+          <br>
+
+          <span class="inline-block">{{ $t('salutation.im') }}
+            <span class="text-[#BE8BFF]">{{ $t('salutation.profession') }}</span>
+          </span>
+
+          <br>
+
+          <span class="inline-block">{{ $t('salutation.i_create') }}
+            <span class="text-white font-bold">{{$t('salutation.accessibility') }}</span>
+            {{ $t('salutation.and') }}
+            <span class="text-white font-bold">{{ $t('salutation.ux') }}</span>.
+          </span>
         </p>
       </div>
 
@@ -24,6 +34,7 @@
         <CorneredContainer class="rotate-90"></CorneredContainer>
       </div>
     </div>
+
     <nav v-if="width >= 1024" class="mt-4">
       <ul id="desktop-nav" class="w-max">
         <li :id="'about-me-nav'">
@@ -90,8 +101,12 @@ function handleRightDivScroll() {
       scrolling = true;
 
       setTimeout(() => {
-        childrenSections.forEach(section => {
-          if (section.getBoundingClientRect().top <= parentDivTop) {
+        childrenSections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const sectionBottom = section.getBoundingClientRect().bottom;
+          const sectionHalf = (sectionTop + sectionBottom) / 2;
+
+          if (sectionTop <= parentDivTop && sectionHalf >= parentDivTop) {
             navItems.forEach(item => {
               if (item.id === `${section.id}-nav`) {
                 item.querySelector('a').classList.add('active')
@@ -103,7 +118,7 @@ function handleRightDivScroll() {
         });
 
         scrolling = false;
-      }, 250);
+      }, 500);
     }
   });
 }
