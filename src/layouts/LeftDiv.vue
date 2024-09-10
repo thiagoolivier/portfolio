@@ -10,7 +10,7 @@
         <h1 class="text-3xl text-white">{{ $t('salutation.hey_there') }}</h1>
         <p class="text-2xl text-[#CBCBCB] space-y-4">
           <span class="inline-block">{{ $t('salutation.my_name_is') }}
-            <span class="text-white font-bold">Thiago Oliveira</span>.
+            <span class="text-white font-bold">Thiago Olivier</span>.
           </span>
 
           <br>

@@ -15,62 +15,98 @@
     <!-- Projects -->
     <Container id="projects">
       <h2 class="content-title">{{ $t('projects.title') }}</h2>
-      <div class="space-y-4 max-sm:space-y-4">
-        <ProjectCard :title="$t('projects.myerp.title')" :details="$t('projects.myerp.details')"
-          :thumbnail="$t('projects.myerp.thumbnail')" :thumbnailAlt="$t('projects.myerp.thumbnailAlt')"
-          :pdf="$t('projects.myerp.pdf')" :skillTags="projects.myerp.skillTags" />
-
+      <div class="space-y-8 max-sm:space-y-4">
         <ProjectCard :title="$t('projects.portfolio.title')" :details="$t('projects.portfolio.details')"
           :thumbnail="$t('projects.portfolio.thumbnail')" :thumbnailAlt="$t('projects.portfolio.thumbnailAlt')"
-          :pdf="$t('projects.portfolio.pdf')" :skillTags="projects.portfolio.skillTags" />
+          :link="$t('projects.portfolio.link')" :skillTags="projects.portfolio.skillTags" />
 
-        <ProjectCard :title="$t('projects.tfitness.title')" :details="$t('projects.tfitness.details')"
-          :thumbnail="$t('projects.tfitness.thumbnail')" :thumbnailAlt="$t('projects.tfitness.thumbnailAlt')"
-          :pdf="$t('projects.tfitness.pdf')" :skillTags="projects.tfitness.skillTags" />
+        <ProjectCard :title="$t('projects.laravel_vue_erp.title')" :details="$t('projects.laravel_vue_erp.details')"
+          :thumbnail="$t('projects.laravel_vue_erp.thumbnail')"
+          :thumbnailAlt="$t('projects.laravel_vue_erp.thumbnailAlt')" :link="$t('projects.laravel_vue_erp.link')"
+          :skillTags="projects.laravel_vue_erp.skillTags" />
+          
+        <ProjectCard :title="$t('projects.swoole.title')" :details="$t('projects.swoole.details')"
+          :thumbnail="$t('projects.swoole.thumbnail')"
+          :thumbnailAlt="$t('projects.swoole.thumbnailAlt')" :link="$t('projects.swoole.link')"
+          :skillTags="projects.swoole.skillTags" />
       </div>
     </Container>
 
     <!-- Skills -->
     <Container id="skills" class="bg-[#424242]">
       <h2 class="content-title">{{ $t('skills.title') }}</h2>
-      <Skill :skillLevel="4">
-        <slot>{{ $t('skills.skill1') }}</slot>
-      </Skill>
-      <Skill :skillLevel="2">
-        <slot>{{ $t('skills.skill2') }}</slot>
-      </Skill>
-      <Skill :skillLevel="4">
-        <slot>{{ $t('skills.skill7') }}</slot>
-      </Skill>
-      <Skill :skillLevel="2">
-        <slot>{{ $t('skills.skill8') }}</slot>
-      </Skill>
-      <Skill :skillLevel="2">
-        <slot>{{ $t('skills.skill9') }}</slot>
-      </Skill>
-      <Skill :skillLevel="3">
-        <slot>{{ $t('skills.skill3') }}</slot>
-      </Skill>
-      <Skill :skillLevel="4">
-        <slot>{{ $t('skills.skill4') }}</slot>
-      </Skill>
-      <Skill :skillLevel="4">
-        <slot>{{ $t('skills.skill5') }}</slot>
-      </Skill>
-      <Skill :skillLevel="4">
-        <slot>{{ $t('skills.skill6') }}</slot>
-      </Skill>
-      <div class="flex justify-center">
-        <button class="group flex py-4 space-x-2">
-          <a class="text-md text-[#cbcbcb] group-hover:text-white font-bold transition ease-out delay-100"
-            :href="$t('skills.resumePath')" target="_blank">{{ $t('skills.resume') }}</a>
-          <svg class="fill-[#CBCBCB] group-hover:fill-white my-auto transition ease-out delay-100" width="14"
-            height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13 1.99992C13 1.44763 12.5522 0.999919 12 0.999919L2.99996 0.99992C2.44767 0.999919 1.99996 1.44763 1.99996 1.99992C1.99996 2.5522 2.44767 2.99992 2.99996 2.99992L11 2.99992L11 10.9999C11 11.5522 11.4477 11.9999 12 11.9999C12.5522 11.9999 13 11.5522 13 10.9999L13 1.99992ZM2.80757 12.6065L12.7071 2.70703L11.2929 1.29281L1.39336 11.1923L2.80757 12.6065Z" />
-          </svg>
-        </button>
+
+      <div class="space-y-12">
+        <div class="flex flex-wrap gap-2 justify-center">
+          <Skill>
+            <slot>PHP</slot>
+          </Skill>
+          <Skill>
+            <slot>Laravel</slot>
+          </Skill>
+          <Skill>
+            <slot>Vue.js</slot>
+          </Skill>
+          <Skill>
+            <slot>TypeScript</slot>
+          </Skill>
+          <Skill>
+            <slot>HTML, CSS & JavaScript</slot>
+          </Skill>
+          <Skill>
+            <slot>Tailwind CSS</slot>
+          </Skill>
+          <Skill>
+            <slot>MariaDB</slot>
+          </Skill>
+          <Skill>
+            <slot>MariaDB</slot>
+          </Skill>
+          <Skill>
+            <slot>MySQL</slot>
+          </Skill>
+          <Skill>
+            <slot>Docker</slot>
+          </Skill>
+          <Skill>
+            <slot>Redis</slot>
+          </Skill>
+          <Skill>
+            <slot>Ubuntu</slot>
+          </Skill>
+          <Skill>
+            <slot>Figma</slot>
+          </Skill>
+          <Skill>
+            <slot>UX Design</slot>
+          </Skill>
+          <Skill>
+            <slot>API REST</slot>
+          </Skill>
+          <Skill>
+            <slot>MVC</slot>
+          </Skill>
+          <Skill>
+            <slot>Swagger/OpenAPI</slot>
+          </Skill>
+          <Skill>
+            <slot>Git/Github</slot>
+          </Skill>
+        </div>
+
+        <div class="flex justify-center">
+          <button class="group flex py-4 space-x-2">
+            <a class="text-md text-[#cbcbcb] group-hover:text-white font-bold transition ease-out delay-100"
+              :href="$t('skills.resumePath')" target="_blank">{{ $t('skills.resume') }}</a>
+            <svg class="fill-[#CBCBCB] group-hover:fill-white my-auto transition ease-out delay-100" width="14"
+              height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 1.99992C13 1.44763 12.5522 0.999919 12 0.999919L2.99996 0.99992C2.44767 0.999919 1.99996 1.44763 1.99996 1.99992C1.99996 2.5522 2.44767 2.99992 2.99996 2.99992L11 2.99992L11 10.9999C11 11.5522 11.4477 11.9999 12 11.9999C12.5522 11.9999 13 11.5522 13 10.9999L13 1.99992ZM2.80757 12.6065L12.7071 2.70703L11.2929 1.29281L1.39336 11.1923L2.80757 12.6065Z" />
+            </svg>
+          </button>
+        </div>
       </div>
+
     </Container>
 
     <!-- Contact -->
@@ -136,7 +172,7 @@ const projects = reactive({
       'Tailwind CSS'
     ]
   },
-  myerp: {
+  laravel_vue_erp: {
     skillTags: [
       'Laravel',
       'MySQL',
@@ -145,10 +181,11 @@ const projects = reactive({
       'Tailwind CSS'
     ]
   },
-  tfitness: {
+  swoole: {
     skillTags: [
-      'UX Design',
-      'Figma'
+      'PHP',
+      'Swoole',
+      'WebSockets'
     ]
   },
 });
