@@ -80,6 +80,6 @@ export const en = {
   },
   footer: {
     madeWith: "Made with Vue.js, Tailwind CSS and love",
-    lastUpdated: "Last updated: Sep/2024",
+    lastUpdated: "Last updated: 09/2024",
   },
 };

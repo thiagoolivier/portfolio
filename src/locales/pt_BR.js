@@ -80,6 +80,6 @@ export const pt_BR = {
   },
   footer: {
     madeWith: "Feito com Vue.js, Tailwind CSS e amor",
-    lastUpdated: "Última atualização: Set/2024",
+    lastUpdated: "Última atualização: 09/2024",
   },
 };
